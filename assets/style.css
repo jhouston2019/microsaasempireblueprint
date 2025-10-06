@@ -394,36 +394,6 @@ p {
     width: 100%;
 }
 
-/* Guarantee Section */
-.guarantee {
-    padding: 60px 0;
-    background: #ffffff;
-    text-align: center;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.guarantee-content {
-    max-width: 600px;
-    margin: 0 auto;
-    color: #374151;
-}
-
-.guarantee-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.guarantee-content h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #1e3a8a;
-    font-weight: 600;
-}
-
-.guarantee-content p {
-    font-size: 1.1rem;
-    color: #6b7280;
-}
 
 /* FAQ Section */
 .faq {
@@ -671,7 +641,6 @@ html {
     .what-youll-learn,
     .bonuses,
     .pricing,
-    .guarantee,
     .faq,
     .footer {
         background: white !important;
