@@ -88,12 +88,13 @@ p {
     padding: 100px 0;
     text-align: center;
     color: #1f2937;
-    background: url('assets/images/hero-background.jpg');
+    background: url('./assets/images/hero-bg.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid #e5e7eb;
+    min-height: 100vh;
 }
 
 
