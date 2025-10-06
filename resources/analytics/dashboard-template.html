@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard Template - Micro-SaaS Empire Business Kit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #374151;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: #1e3a8a;
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .nav-item {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: #3b82f6;
+        }
+
+        .main-content {
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #1e3a8a;
+            font-size: 2rem;
+        }
+
+        .date-picker {
+            background: white;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card h3 {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .change {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .change.positive {
+            color: #16a34a;
+        }
+
+        .change.negative {
+            color: #dc2626;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-card h3 {
+            color: #374151;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background: #f3f4f6;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .table-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-card h3 {
+            color: #374151;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .table th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+
+        .table td {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-badge.active {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-badge.inactive {
+            background: #fef2f2;
+            color: #991b1b;
+        }
+
+        .status-badge.trial {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Analytics</h2>
+            <nav>
+                <a href="#" class="nav-item active">Overview</a>
+                <a href="#" class="nav-item">Users</a>
+                <a href="#" class="nav-item">Revenue</a>
+                <a href="#" class="nav-item">Engagement</a>
+                <a href="#" class="nav-item">Reports</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Dashboard Overview</h1>
+                <input type="date" class="date-picker" value="2024-01-01">
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <div class="value">2,847</div>
+                    <div class="change positive">
+                        <span>↗</span>
+                        <span>+12.5% from last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Monthly Revenue</h3>
+                    <div class="value">$8,420</div>
+                    <div class="change positive">
+                        <span>↗</span>
+                        <span>+8.2% from last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Active Users</h3>
+                    <div class="value">1,234</div>
+                    <div class="change positive">
+                        <span>↗</span>
+                        <span>+5.1% from last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Churn Rate</h3>
+                    <div class="value">3.2%</div>
+                    <div class="change negative">
+                        <span>↘</span>
+                        <span>-0.8% from last month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Grid -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Revenue Trend</h3>
+                    <div class="chart-placeholder">
+                        📈 Revenue chart would go here
+                        <br>Integrate with Chart.js, D3.js, or similar
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>User Growth</h3>
+                    <div class="chart-placeholder">
+                        📊 User growth chart would go here
+                        <br>Show new vs returning users
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Users Table -->
+            <div class="table-card">
+                <h3>Recent Users</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Plan</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>Pro</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>2024-01-15</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>jane@example.com</td>
+                            <td>Basic</td>
+                            <td><span class="status-badge trial">Trial</span></td>
+                            <td>2024-01-14</td>
+                        </tr>
+                        <tr>
+                            <td>Mike Johnson</td>
+                            <td>mike@example.com</td>
+                            <td>Enterprise</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>2024-01-13</td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Wilson</td>
+                            <td>sarah@example.com</td>
+                            <td>Basic</td>
+                            <td><span class="status-badge inactive">Inactive</span></td>
+                            <td>2024-01-12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample JavaScript for dashboard functionality
+        console.log('Analytics Dashboard Template Loaded');
+        
+        // This would integrate with your actual analytics data
+        // Examples: Google Analytics, Mixpanel, PostHog, etc.
+        
+        // Sample data fetching function
+        async function fetchAnalyticsData() {
+            // Replace with actual API calls
+            console.log('Fetching analytics data...');
+        }
+        
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchAnalyticsData();
+        });
+    </script>
+</body>
+</html>
+

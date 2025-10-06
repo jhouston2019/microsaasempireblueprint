@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Tool Stack Guide - Micro-SaaS Empire Business Kit</title>
+    <link rel="stylesheet" href="../../assets/style.css?v=10">
+    <style>
+        .tool-guide {
+            padding: 60px 0;
+            background: #f8fafc;
+        }
+        
+        .tool-category {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .tool-category h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .tool-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .tool-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tool-info h3 {
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .tool-info p {
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tool-pricing {
+            color: #16a34a;
+            font-weight: 600;
+        }
+        
+        .tool-link {
+            background: #1e3a8a;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .tool-link:hover {
+            background: #3b82f6;
+        }
+        
+        .setup-guide {
+            background: #f0f9ff;
+            border-left: 4px solid #1e3a8a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .setup-guide h4 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .setup-guide ol {
+            color: #6b7280;
+            padding-left: 2rem;
+        }
+        
+        .setup-guide li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <section class="tool-guide">
+        <div class="container">
+            <h1 style="text-align: center; color: #1e3a8a; margin-bottom: 3rem; font-size: 2.5rem;">Complete Tool Stack Guide</h1>
+            <p style="text-align: center; font-size: 1.2rem; color: #6b7280; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Everything you need to build, launch, and scale your micro-SaaS business. Each tool has been tested and recommended by successful entrepreneurs.
+            </p>
+
+            <!-- Development & Hosting -->
+            <div class="tool-category">
+                <h2>🚀 Development & Hosting</h2>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Vercel</h3>
+                        <p>Best for: Frontend hosting, serverless functions, automatic deployments</p>
+                        <p>Perfect for React, Next.js, and static sites. Free tier available.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $20/month</span>
+                        <a href="https://vercel.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Netlify</h3>
+                        <p>Best for: Static sites, JAMstack, form handling</p>
+                        <p>Great for landing pages, documentation, and simple web apps.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $19/month</span>
+                        <a href="https://netlify.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Railway</h3>
+                        <p>Best for: Full-stack apps, databases, backend services</p>
+                        <p>Simple deployment for Node.js, Python, and database hosting.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">$5 - $20/month</span>
+                        <a href="https://railway.app" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database & Backend -->
+            <div class="tool-category">
+                <h2>🗄️ Database & Backend</h2>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Supabase</h3>
+                        <p>Best for: PostgreSQL database, authentication, real-time features</p>
+                        <p>Open-source Firebase alternative with PostgreSQL. Great for user management.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $25/month</span>
+                        <a href="https://supabase.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>PlanetScale</h3>
+                        <p>Best for: MySQL database, branching, scaling</p>
+                        <p>Serverless MySQL with branching for database changes. Great for complex apps.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $29/month</span>
+                        <a href="https://planetscale.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>MongoDB Atlas</h3>
+                        <p>Best for: NoSQL database, flexible schemas, JSON data</p>
+                        <p>Cloud MongoDB service. Great for rapid prototyping and flexible data structures.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $57/month</span>
+                        <a href="https://mongodb.com/atlas" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Processing -->
+            <div class="tool-category">
+                <h2>💳 Payment Processing</h2>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Stripe</h3>
+                        <p>Best for: Credit card payments, subscriptions, global payments</p>
+                        <p>Industry standard for payment processing. Excellent documentation and developer experience.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">2.9% + 30¢</span>
+                        <a href="https://stripe.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Paddle</h3>
+                        <p>Best for: Global payments, tax handling, subscription management</p>
+                        <p>Handles taxes and compliance automatically. Great for international sales.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">5% + 50¢</span>
+                        <a href="https://paddle.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>LemonSqueezy</h3>
+                        <p>Best for: Digital products, simple setup, creator-friendly</p>
+                        <p>Built specifically for digital creators. Handles taxes and compliance.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">3.5% + 30¢</span>
+                        <a href="https://lemonsqueezy.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email & Communication -->
+            <div class="tool-category">
+                <h2>📧 Email & Communication</h2>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>ConvertKit</h3>
+                        <p>Best for: Email marketing, automation, creator-focused</p>
+                        <p>Built for creators and entrepreneurs. Great automation and segmentation.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">$15 - $29/month</span>
+                        <a href="https://convertkit.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Mailchimp</h3>
+                        <p>Best for: Email marketing, landing pages, small businesses</p>
+                        <p>User-friendly interface with good automation features.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $10/month</span>
+                        <a href="https://mailchimp.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Resend</h3>
+                        <p>Best for: Transactional emails, developer-friendly</p>
+                        <p>Modern email API for developers. Great for automated emails.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $20/month</span>
+                        <a href="https://resend.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics & Monitoring -->
+            <div class="tool-category">
+                <h2>📊 Analytics & Monitoring</h2>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Google Analytics</h3>
+                        <p>Best for: Website analytics, user behavior, traffic analysis</p>
+                        <p>Free and comprehensive. Essential for understanding your audience.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free</span>
+                        <a href="https://analytics.google.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Mixpanel</h3>
+                        <p>Best for: Product analytics, user events, funnel analysis</p>
+                        <p>Great for understanding how users interact with your product.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $25/month</span>
+                        <a href="https://mixpanel.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>PostHog</h3>
+                        <p>Best for: Product analytics, feature flags, session recordings</p>
+                        <p>Open-source alternative to Mixpanel with more features.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $20/month</span>
+                        <a href="https://posthog.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design & Development -->
+            <div class="tool-category">
+                <h2>🎨 Design & Development</h2>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Figma</h3>
+                        <p>Best for: UI/UX design, prototyping, collaboration</p>
+                        <p>Industry standard for design. Great for creating mockups and prototypes.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $12/month</span>
+                        <a href="https://figma.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>Tailwind CSS</h3>
+                        <p>Best for: Rapid UI development, utility-first CSS</p>
+                        <p>Speeds up development with utility classes. Great for consistent design.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free</span>
+                        <a href="https://tailwindcss.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+                
+                <div class="tool-item">
+                    <div class="tool-info">
+                        <h3>GitHub</h3>
+                        <p>Best for: Code version control, collaboration, CI/CD</p>
+                        <p>Essential for code management and team collaboration.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="tool-pricing">Free - $4/month</span>
+                        <a href="https://github.com" target="_blank" class="tool-link">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setup Guide -->
+            <div class="setup-guide">
+                <h4>🚀 Quick Setup Guide</h4>
+                <ol>
+                    <li><strong>Start with hosting:</strong> Choose Vercel or Netlify for your frontend</li>
+                    <li><strong>Add a database:</strong> Set up Supabase for user management and data</li>
+                    <li><strong>Integrate payments:</strong> Add Stripe for subscription handling</li>
+                    <li><strong>Set up analytics:</strong> Install Google Analytics and PostHog</li>
+                    <li><strong>Configure email:</strong> Use Resend for transactional emails</li>
+                    <li><strong>Add monitoring:</strong> Set up error tracking and performance monitoring</li>
+                </ol>
+            </div>
+
+            <!-- Cost Breakdown -->
+            <div class="tool-category">
+                <h2>💰 Monthly Cost Breakdown</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Starter Stack</h3>
+                        <ul style="color: #6b7280; list-style: none; padding: 0;">
+                            <li>Vercel: Free</li>
+                            <li>Supabase: Free</li>
+                            <li>Stripe: 2.9% + 30¢</li>
+                            <li>Resend: Free</li>
+                            <li>Google Analytics: Free</li>
+                            <li><strong>Total: ~$0/month</strong></li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Growth Stack</h3>
+                        <ul style="color: #6b7280; list-style: none; padding: 0;">
+                            <li>Vercel Pro: $20/month</li>
+                            <li>Supabase Pro: $25/month</li>
+                            <li>Stripe: 2.9% + 30¢</li>
+                            <li>ConvertKit: $15/month</li>
+                            <li>PostHog: $20/month</li>
+                            <li><strong>Total: ~$80/month</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
