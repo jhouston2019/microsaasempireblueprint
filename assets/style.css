@@ -88,7 +88,7 @@ p {
     padding: 100px 0;
     text-align: center;
     color: #1f2937;
-    background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('assets/images/hero-bg.jpg');
+    background: linear-gradient(rgba(30, 58, 138, 0.4), rgba(30, 58, 138, 0.4)), url('assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
