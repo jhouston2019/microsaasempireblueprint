@@ -1,0 +1,36 @@
+# System files
+AppData/
+.android/
+.config/
+.cursor/
+.vscode/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Pictures/
+Saved Games/
+Searches/
+Videos/
+OneDrive/
+Contacts/
+NTUSER.DAT*
+ntuser.dat*
+ntuser.ini
+*.regtrans-ms
+*.TxR.*
+*.TM.*
+*.blf
+*.LOG*
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store
