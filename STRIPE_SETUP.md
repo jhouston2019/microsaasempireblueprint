@@ -23,8 +23,8 @@ Set these environment variables in your deployment platform (Netlify, Vercel, et
 ```bash
 STRIPE_PUBLISHABLE_KEY=pk_live_your_publishable_key_here
 STRIPE_PRICE_MICRO_SAAS_EMPIRE_KIT=price_your_price_id_here
-STRIPE_CHECKOUT_SUCCESS_URL=https://microsaasempireblueprint.com/success
-STRIPE_CHECKOUT_CANCEL_URL=https://microsaasempireblueprint.com/cancel
+STRIPE_CHECKOUT_SUCCESS_URL=https://microsaasempireblueprint.com/success.html
+STRIPE_CHECKOUT_CANCEL_URL=https://microsaasempireblueprint.com/cancel.html
 ```
 
 ### 3. Update the Checkout Link
@@ -53,9 +53,13 @@ The checkout is configured for **single payments** (`mode: "payment"`), not subs
 
 ## Success and Cancel Pages
 
-Make sure you have these pages set up:
-- `/success` - Thank you page after successful payment
-- `/cancel` - Page shown if customer cancels checkout
+The following pages are included in this repository:
+- `success.html` - Complete resource center with all course materials and downloads
+- `cancel.html` - Re-engagement page to encourage customers to complete their purchase
+
+These pages provide:
+- **Success Page**: Full access to all course materials, templates, community access, and next steps
+- **Cancel Page**: Reasons to complete purchase, value proposition, and easy return to checkout
 
 ## Files Updated
 

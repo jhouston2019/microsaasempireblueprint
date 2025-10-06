@@ -11,8 +11,8 @@ const STRIPE_CONFIG = {
     // For development, you can set these directly:
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_your_key_here',
     priceId: process.env.STRIPE_PRICE_MICRO_SAAS_EMPIRE_KIT || 'price_your_price_id_here',
-    successUrl: process.env.STRIPE_CHECKOUT_SUCCESS_URL || 'https://microsaasempireblueprint.com/success',
-    cancelUrl: process.env.STRIPE_CHECKOUT_CANCEL_URL || 'https://microsaasempireblueprint.com/cancel'
+    successUrl: process.env.STRIPE_CHECKOUT_SUCCESS_URL || 'https://microsaasempireblueprint.com/success.html',
+    cancelUrl: process.env.STRIPE_CHECKOUT_CANCEL_URL || 'https://microsaasempireblueprint.com/cancel.html'
 };
 
 // Initialize Stripe
