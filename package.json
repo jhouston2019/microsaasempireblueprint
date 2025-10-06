@@ -1,0 +1,25 @@
+{
+  "name": "microsaasempireblueprint",
+  "version": "1.0.0",
+  "description": "Landing page for The Micro-SaaS Empire Blueprint course",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/index.html",
+    "build": "echo 'Static site - no build required'",
+    "preview": "npx live-server --port=3000 --open=/index.html"
+  },
+  "keywords": [
+    "micro-saas",
+    "landing-page",
+    "course",
+    "business"
+  ],
+  "author": "Micro-SaaS Empire Blueprint",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
+
+
+
