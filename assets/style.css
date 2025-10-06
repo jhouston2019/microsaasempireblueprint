@@ -309,6 +309,17 @@ p {
     margin-right: auto;
 }
 
+.pricing-single {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.pricing-single .pricing-card {
+    max-width: 500px;
+    width: 100%;
+}
+
 .pricing-card {
     background: #ffffff;
     padding: 2.5rem;
@@ -570,6 +581,10 @@ p {
     
     .pricing-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .pricing-single {
+        justify-content: center;
     }
     
     .pricing-card.featured {
