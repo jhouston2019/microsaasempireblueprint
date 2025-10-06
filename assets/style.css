@@ -87,11 +87,15 @@ p {
 .hero {
     padding: 100px 0;
     text-align: center;
-    color: #1f2937;
-    background: linear-gradient(45deg, #1e3a8a, #3b82f6) url('https://via.placeholder.com/1200x800/1e3a8a/ffffff?text=Background+Image') no-repeat center center;
+    color: white;
+    background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('assets/images/hero-bg.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
-    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -99,6 +103,9 @@ p {
 .hero-content {
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-title {
