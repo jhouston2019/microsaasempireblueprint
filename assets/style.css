@@ -70,14 +70,17 @@ p {
 }
 
 .cta-button.primary {
-    background: #3b82f6;
-    color: white;
-    border-color: #3b82f6;
+    background: #ffffff;
+    color: #1e3a8a;
+    border-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .cta-button.primary:hover {
-    background: #1e40af;
-    border-color: #1e40af;
+    background: #f8fafc;
+    border-color: #f8fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
 }
 
 /* Hero Section */
@@ -85,7 +88,8 @@ p {
     padding: 100px 0;
     text-align: center;
     color: #1f2937;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(59, 130, 246, 0.6) 100%), 
+                url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid #e5e7eb;
@@ -98,8 +102,8 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%231e3a8a" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .hero-content {
@@ -110,24 +114,27 @@ p {
 .hero-title {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    color: #1e3a8a;
+    color: #ffffff;
     font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 500;
-    color: #374151;
+    color: #f8fafc;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
     font-size: 1.2rem;
     margin-bottom: 2.5rem;
-    color: #6b7280;
+    color: #e2e8f0;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-cta {
