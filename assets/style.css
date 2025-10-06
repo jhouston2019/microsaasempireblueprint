@@ -8,8 +8,8 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #374151;
+    background: #ffffff;
     min-height: 100vh;
 }
 
@@ -48,47 +48,47 @@ p {
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #1e3a8a;
     color: white;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 8px;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid #1e3a8a;
     text-align: center;
     margin: 5px;
     min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-    background: white;
-    color: #667eea;
-    border-color: #667eea;
+    box-shadow: 0 8px 15px rgba(30, 58, 138, 0.3);
+    background: #3b82f6;
+    border-color: #3b82f6;
 }
 
 .cta-button.primary {
-    background: white;
-    color: #667eea;
-    border-color: white;
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
 }
 
 .cta-button.primary:hover {
-    background: transparent;
-    color: white;
-    border-color: white;
+    background: #1e40af;
+    border-color: #1e40af;
 }
 
 /* Hero Section */
 .hero {
     padding: 100px 0;
     text-align: center;
-    color: white;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #1f2937;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .hero::before {
@@ -98,8 +98,8 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.1;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%231e3a8a" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
 }
 
 .hero-content {
@@ -110,20 +110,21 @@ p {
 .hero-title {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: #1e3a8a;
+    font-weight: 700;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 500;
-    opacity: 0.95;
+    color: #374151;
 }
 
 .hero-description {
     font-size: 1.2rem;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    color: #6b7280;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -137,15 +138,16 @@ p {
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
-    color: white;
+    color: #1e3a8a;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
 /* Social Proof Section */
 .social-proof {
     padding: 80px 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .testimonials {
@@ -156,35 +158,44 @@ p {
 }
 
 .testimonial {
-    background: rgba(255, 255, 255, 0.15);
+    background: #f8fafc;
     padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-content p {
     font-style: italic;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    color: #374151;
 }
 
 .testimonial-author strong {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: #1e3a8a;
 }
 
 .testimonial-author span {
-    opacity: 0.8;
+    color: #6b7280;
     font-size: 0.9rem;
 }
 
 /* What You'll Learn Section */
 .what-youll-learn {
     padding: 80px 0;
-    background: rgba(255, 255, 255, 0.05);
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .modules {
@@ -196,26 +207,27 @@ p {
 
 .module {
     display: flex;
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff;
     padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .module:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .module-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #667eea;
+    color: #ffffff;
     margin-right: 1.5rem;
     flex-shrink: 0;
-    background: white;
+    background: #1e3a8a;
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -227,18 +239,19 @@ p {
 
 .module-content h3 {
     margin-bottom: 1rem;
-    color: white;
+    color: #1e3a8a;
+    font-weight: 600;
 }
 
 .module-content p {
-    opacity: 0.9;
+    color: #6b7280;
 }
 
 /* Bonuses Section */
 .bonuses {
     padding: 80px 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .bonus-grid {
@@ -249,33 +262,37 @@ p {
 }
 
 .bonus-item {
-    background: rgba(255, 255, 255, 0.15);
+    background: #f8fafc;
     padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .bonus-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .bonus-item h3 {
     margin-bottom: 1rem;
     font-size: 1.3rem;
+    color: #1e3a8a;
+    font-weight: 600;
 }
 
 .bonus-item p {
-    opacity: 0.9;
+    color: #6b7280;
 }
 
 /* Pricing Section */
 .pricing {
     padding: 80px 0;
-    background: rgba(255, 255, 255, 0.05);
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .pricing-grid {
@@ -289,24 +306,26 @@ p {
 }
 
 .pricing-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff;
     padding: 2.5rem;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
     text-align: center;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .pricing-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .pricing-card.featured {
-    border: 2px solid #667eea;
+    border: 2px solid #1e3a8a;
     transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(30, 58, 138, 0.2);
 }
 
 .pricing-badge {
@@ -314,7 +333,7 @@ p {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: #667eea;
+    background: #1e3a8a;
     color: white;
     padding: 8px 20px;
     border-radius: 20px;
@@ -325,6 +344,8 @@ p {
 .pricing-header h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: #1e3a8a;
+    font-weight: 600;
 }
 
 .price {
@@ -337,16 +358,17 @@ p {
 .currency {
     font-size: 1.5rem;
     margin-right: 0.5rem;
+    color: #6b7280;
 }
 
 .amount {
     font-size: 4rem;
     font-weight: 700;
-    color: #667eea;
+    color: #1e3a8a;
 }
 
 .price-description {
-    opacity: 0.8;
+    color: #6b7280;
     margin-bottom: 2rem;
 }
 
@@ -357,7 +379,8 @@ p {
 
 .pricing-features li {
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
 }
 
 .pricing-cta {
@@ -374,15 +397,15 @@ p {
 /* Guarantee Section */
 .guarantee {
     padding: 60px 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: #ffffff;
     text-align: center;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .guarantee-content {
     max-width: 600px;
     margin: 0 auto;
-    color: white;
+    color: #374151;
 }
 
 .guarantee-icon {
@@ -393,17 +416,20 @@ p {
 .guarantee-content h2 {
     margin-bottom: 1rem;
     font-size: 2rem;
+    color: #1e3a8a;
+    font-weight: 600;
 }
 
 .guarantee-content p {
     font-size: 1.1rem;
-    opacity: 0.9;
+    color: #6b7280;
 }
 
 /* FAQ Section */
 .faq {
     padding: 80px 0;
-    background: rgba(255, 255, 255, 0.05);
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .faq-list {
@@ -412,12 +438,12 @@ p {
 }
 
 .faq-item {
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff;
     margin-bottom: 1rem;
     border-radius: 10px;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .faq-question {
@@ -426,23 +452,26 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: #374151;
     transition: background-color 0.3s ease;
 }
 
 .faq-question:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #f8fafc;
 }
 
 .faq-question h3 {
     margin: 0;
     font-size: 1.2rem;
+    color: #1e3a8a;
+    font-weight: 600;
 }
 
 .faq-toggle {
     font-size: 1.5rem;
     font-weight: bold;
     transition: transform 0.3s ease;
+    color: #1e3a8a;
 }
 
 .faq-item.active .faq-toggle {
@@ -457,15 +486,14 @@ p {
 
 .faq-answer p {
     padding: 0 1.5rem 1.5rem;
-    color: white;
-    opacity: 0.9;
+    color: #6b7280;
     margin: 0;
 }
 
 /* Footer */
 .footer {
     padding: 60px 0 30px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #1e3a8a;
     color: white;
 }
 
@@ -632,7 +660,7 @@ html {
 /* Focus states for accessibility */
 .cta-button:focus,
 .faq-question:focus {
-    outline: 2px solid #667eea;
+    outline: 2px solid #1e3a8a;
     outline-offset: 2px;
 }
 
@@ -651,7 +679,7 @@ html {
     }
     
     .cta-button {
-        background: #667eea !important;
+        background: #1e3a8a !important;
         color: white !important;
     }
 }
