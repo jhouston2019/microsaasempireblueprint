@@ -1,11 +1,11 @@
 # Stripe Setup Instructions for Micro-SaaS Empire Business Kit
 
 ## Overview
-This project has been updated to use a single one-time payment of $297 for the Micro-SaaS Empire Business Kit.
+This project has been updated to use a single payment of $297 for the Micro-SaaS Empire Business Kit.
 
 ## Stripe Configuration
 
-### 1. Create a One-Time Product in Stripe Dashboard
+### 1. Create a Single Payment Product in Stripe Dashboard
 
 1. Log into your Stripe Dashboard
 2. Go to **Products** → **Add Product**
@@ -13,7 +13,7 @@ This project has been updated to use a single one-time payment of $297 for the M
    - **Name**: "Micro-SaaS Empire Business Kit"
    - **Description**: "Complete blueprint with proven strategies, tools, and resources to build your digital empire"
    - **Pricing**: $297.00 USD
-   - **Billing**: One-time (not recurring)
+   - **Billing**: Single payment (not recurring)
 4. Save the product and copy the **Price ID** (starts with `price_`)
 
 ### 2. Environment Variables
@@ -49,7 +49,7 @@ Replace `STRIPE_PRICE_MICRO_SAAS_EMPIRE_KIT` in the HTML with your actual Stripe
 
 ## Payment Mode Configuration
 
-The checkout is configured for **one-time payments** (`mode: "payment"`), not subscriptions. This ensures customers pay $297 once and get lifetime access.
+The checkout is configured for **single payments** (`mode: "payment"`), not subscriptions. This ensures customers pay $297 once and get lifetime access.
 
 ## Success and Cancel Pages
 

@@ -1,10 +1,10 @@
 // Stripe Checkout Configuration for Micro-SaaS Empire Business Kit
-// One-time payment of $297
+// Single payment of $297
 
 const STRIPE_CONFIG = {
     // Environment variables should be set in your deployment environment
     // STRIPE_PUBLISHABLE_KEY: 'pk_test_...' or 'pk_live_...'
-    // STRIPE_PRICE_MICRO_SAAS_EMPIRE_KIT: 'price_...' (one-time product)
+    // STRIPE_PRICE_MICRO_SAAS_EMPIRE_KIT: 'price_...' (single payment product)
     // STRIPE_CHECKOUT_SUCCESS_URL: 'https://microsaasempireblueprint.com/success'
     // STRIPE_CHECKOUT_CANCEL_URL: 'https://microsaasempireblueprint.com/cancel'
     
@@ -28,7 +28,7 @@ function redirectToStripeCheckout() {
         return;
     }
 
-    // Create checkout session for one-time payment
+    // Create checkout session for single payment
     fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: {
@@ -38,7 +38,7 @@ function redirectToStripeCheckout() {
             priceId: STRIPE_CONFIG.priceId,
             successUrl: STRIPE_CONFIG.successUrl,
             cancelUrl: STRIPE_CONFIG.cancelUrl,
-            mode: 'payment' // One-time payment, not subscription
+            mode: 'payment' // Single payment, not subscription
         })
     })
     .then(response => response.json())
