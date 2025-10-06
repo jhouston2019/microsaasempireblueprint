@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFIT Framework Worksheet - MicroSaaS Empire Blueprint</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .worksheet {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .tool-idea {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .tool-name {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .metric {
+            margin-bottom: 25px;
+        }
+        
+        .metric h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .metric-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .rating {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .rating label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .rating input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        .notes {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-height: 60px;
+            resize: vertical;
+        }
+        
+        .score-summary {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .total-score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .recommendation {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        
+        .add-tool {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .add-tool:hover {
+            opacity: 0.9;
+        }
+        
+        .print-btn {
+            background: #2c3e50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="worksheet">
+        <h1>PROFIT Framework Worksheet</h1>
+        <p class="subtitle">Evaluate Your Micro-SaaS Tool Ideas</p>
+        
+        <div id="toolsContainer">
+            <div class="tool-idea">
+                <input type="text" class="tool-name" placeholder="Tool Idea Name" onchange="saveData()">
+                
+                <div class="metric">
+                    <h3>P - Problem Severity (1-10)</h3>
+                    <p class="metric-description">How painful is the problem? 8-10 = People pay immediately | 5-7 = Need convincing | 1-4 = Skip it</p>
+                    <div class="rating">
+                        <label><input type="radio" name="problem1" value="1" onchange="calculateScore(0)"> 1</label>
+                        <label><input type="radio" name="problem1" value="2" onchange="calculateScore(0)"> 2</label>
+                        <label><input type="radio" name="problem1" value="3" onchange="calculateScore(0)"> 3</label>
+                        <label><input type="radio" name="problem1" value="4" onchange="calculateScore(0)"> 4</label>
+                        <label><input type="radio" name="problem1" value="5" onchange="calculateScore(0)"> 5</label>
+                        <label><input type="radio" name="problem1" value="6" onchange="calculateScore(0)"> 6</label>
+                        <label><input type="radio" name="problem1" value="7" onchange="calculateScore(0)"> 7</label>
+                        <label><input type="radio" name="problem1" value="8" onchange="calculateScore(0)"> 8</label>
+                        <label><input type="radio" name="problem1" value="9" onchange="calculateScore(0)"> 9</label>
+                        <label><input type="radio" name="problem1" value="10" onchange="calculateScore(0)"> 10</label>
+                    </div>
+                    <textarea class="notes" placeholder="Notes..." onchange="saveData()"></textarea>
+                </div>
+                
+                <div class="metric">
+                    <h3>R - Reach (Market Size)</h3>
+                    <p class="metric-description">1M+ = 10 points | 500K-1M = 8 points | 100K-500K = 6 points | <100K = 3 points</p>
+                    <div class="rating">
+                        <label><input type="radio" name="reach1" value="3" onchange="calculateScore(0)"> <100K</label>
+                        <label><input type="radio" name="reach1" value="6" onchange="calculateScore(0)"> 100K-500K</label>
+                        <label><input type="radio" name="reach1" value="8" onchange="calculateScore(0)"> 500K-1M</label>
+                        <label><input type="radio" name="reach1" value="10" onchange="calculateScore(0)"> 1M+</label>
+                    </div>
+                    <textarea class="notes" placeholder="Market research notes..." onchange="saveData()"></textarea>
+                </div>
+                
+                <div class="metric">
+                    <h3>O - Overhead (Complexity)</h3>
+                    <p class="metric-description">Simple (1-2 features) = 10 points | Medium (3-5) = 6 points | Complex = 3 points</p>
+                    <div class="rating">
+                        <label><input type="radio" name="overhead1" value="10" onchange="calculateScore(0)"> Simple</label>
+                        <label><input type="radio" name="overhead1" value="6" onchange="calculateScore(0)"> Medium</label>
+                        <label><input type="radio" name="overhead1" value="3" onchange="calculateScore(0)"> Complex</label>
+                    </div>
+                    <textarea class="notes" placeholder="Features and complexity notes..." onchange="saveData()"></textarea>
+                </div>
+                
+                <div class="metric">
+                    <h3>F - Frequency (Usage Pattern)</h3>
+                    <p class="metric-description">Daily = 10 points | Weekly = 7 points | Monthly = 5 points | Rarely = 2 points</p>
+                    <div class="rating">
+                        <label><input type="radio" name="frequency1" value="10" onchange="calculateScore(0)"> Daily</label>
+                        <label><input type="radio" name="frequency1" value="7" onchange="calculateScore(0)"> Weekly</label>
+                        <label><input type="radio" name="frequency1" value="5" onchange="calculateScore(0)"> Monthly</label>
+                        <label><input type="radio" name="frequency1" value="2" onchange="calculateScore(0)"> Rarely</label>
+                    </div>
+                    <textarea class="notes" placeholder="Usage pattern notes..." onchange="saveData()"></textarea>
+                </div>
+                
+                <div class="metric">
+                    <h3>I - Income Potential</h3>
+                    <p class="metric-description">B2B ($29-299) = 10 points | Prosumer ($9-49) = 7 points | Consumer ($2-19) = 5 points</p>
+                    <div class="rating">
+                        <label><input type="radio" name="income1" value="5" onchange="calculateScore(0)"> Consumer</label>
+                        <label><input type="radio" name="income1" value="7" onchange="calculateScore(0)"> Prosumer</label>
+                        <label><input type="radio" name="income1" value="10" onchange="calculateScore(0)"> B2B</label>
+                    </div>
+                    <textarea class="notes" placeholder="Pricing strategy notes..." onchange="saveData()"></textarea>
+                </div>
+                
+                <div class="metric">
+                    <h3>T - Time to Market</h3>
+                    <p class="metric-description">1 week = 10 points | 2-4 weeks = 6 points | 1+ months = 3 points</p>
+                    <div class="rating">
+                        <label><input type="radio" name="time1" value="10" onchange="calculateScore(0)"> 1 week</label>
+                        <label><input type="radio" name="time1" value="6" onchange="calculateScore(0)"> 2-4 weeks</label>
+                        <label><input type="radio" name="time1" value="3" onchange="calculateScore(0)"> 1+ months</label>
+                    </div>
+                    <textarea class="notes" placeholder="Development timeline notes..." onchange="saveData()"></textarea>
+                </div>
+                
+                <div class="score-summary">
+                    <div class="total-score">Total Score: <span id="score0">0</span> / 60</div>
+                    <div class="recommendation" id="rec0">Enter ratings to see recommendation</div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="add-tool" onclick="addTool()">+ Add Another Tool Idea</button>
+        <button class="print-btn" onclick="window.print()">Print/Save as PDF</button>
+    </div>
+    
+    <script>
+        let toolCount = 1;
+        
+        function calculateScore(toolIndex) {
+            const metrics = ['problem', 'reach', 'overhead', 'frequency', 'income', 'time'];
+            let total = 0;
+            let count = 0;
+            
+            metrics.forEach(metric => {
+                const selected = document.querySelector(`input[name="${metric}${toolIndex + 1}"]:checked`);
+                if (selected) {
+                    total += parseInt(selected.value);
+                    count++;
+                }
+            });
+            
+            document.getElementById(`score${toolIndex}`).textContent = total;
+            
+            const rec = document.getElementById(`rec${toolIndex}`);
+            if (count === 6) {
+                if (total >= 45) {
+                    rec.textContent = "🟢 EXCELLENT - Build immediately!";
+                    rec.style.color = "#27ae60";
+                } else if (total >= 35) {
+                    rec.textContent = "🟡 GOOD - Worth building";
+                    rec.style.color = "#f39c12";
+                } else if (total >= 25) {
+                    rec.textContent = "🟠 MAYBE - Needs refinement";
+                    rec.style.color = "#e67e22";
+                } else {
+                    rec.textContent = "🔴 SKIP - Find better idea";
+                    rec.style.color = "#e74c3c";
+                }
+            }
+            saveData();
+        }
+        
+        function addTool() {
+            const container = document.getElementById('toolsContainer');
+            const newTool = document.querySelector('.tool-idea').cloneNode(true);
+            
+            // Reset all inputs in the new tool
+            newTool.querySelectorAll('input[type="text"], textarea').forEach(input => {
+                input.value = '';
+            });
+            
+            // Update radio button names
+            newTool.querySelectorAll('input[type="radio"]').forEach(radio => {
+                const name = radio.name.replace(/\d+/, toolCount + 1);
+                radio.name = name;
+                radio.checked = false;
+                radio.setAttribute('onchange', `calculateScore(${toolCount})`);
+            });
+            
+            // Update score display IDs
+            newTool.querySelector('.total-score span').id = `score${toolCount}`;
+            newTool.querySelector('.total-score span').textContent = '0';
+            newTool.querySelector('.recommendation').id = `rec${toolCount}`;
+            newTool.querySelector('.recommendation').textContent = 'Enter ratings to see recommendation';
+            
+            container.appendChild(newTool);
+            toolCount++;
+        }
+        
+        function saveData() {
+            // Save to localStorage for persistence
+            const data = [];
+            document.querySelectorAll('.tool-idea').forEach((tool, index) => {
+                const toolData = {
+                    name: tool.querySelector('.tool-name').value,
+                    notes: Array.from(tool.querySelectorAll('.notes')).map(n => n.value)
+                };
+                data.push(toolData);
+            });
+            localStorage.setItem('profitWorksheet', JSON.stringify(data));
+        }
+        
+        // Load saved data on page load
+        window.onload = function() {
+            const saved = localStorage.getItem('profitWorksheet');
+            if (saved) {
+                // Implement loading logic if needed
+            }
+        };
+    </script>
+</body>
+</html>
