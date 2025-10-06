@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Micro-SaaS Empire Business Kit</title>
+    <meta name="description" content="Admin login for Micro-SaaS Empire Business Kit management panel.">
+    
+    <link rel="stylesheet" href="assets/style.css?v=9">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .admin-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .admin-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .admin-container h1 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .admin-container p {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        
+        .admin-badge {
+            background: #1e3a8a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #1e3a8a;
+        }
+        
+        .admin-button {
+            width: 100%;
+            padding: 14px;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .admin-button:hover {
+            background: #3b82f6;
+        }
+        
+        .admin-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #6b7280;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e5e7eb;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 1rem;
+        }
+        
+        .user-link {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .user-link a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .user-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #fecaca;
+            display: none;
+        }
+        
+        .success-message {
+            background: #f0fdf4;
+            color: #16a34a;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #bbf7d0;
+            display: none;
+        }
+        
+        .security-notice {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #fde68a;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 480px) {
+            .admin-container {
+                margin: 1rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="admin-hero">
+        <div class="container">
+            <div class="admin-container">
+                <div class="admin-badge">ADMIN ACCESS</div>
+                <h1>Admin Login</h1>
+                <p>Access the management panel</p>
+                
+                <div class="security-notice">
+                    <strong>Security Notice:</strong> This is a restricted area. All access attempts are logged.
+                </div>
+                
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+                
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminEmail">Admin Email</label>
+                        <input type="email" id="adminEmail" name="adminEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password</label>
+                        <input type="password" id="adminPassword" name="adminPassword" required>
+                    </div>
+                    
+                    <button type="submit" class="admin-button" id="adminLoginButton">
+                        Access Admin Panel
+                    </button>
+                </form>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="user-link">
+                    <p><a href="login.html">Regular User Login</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Admin login form handling
+        document.getElementById('adminLoginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            const loginButton = document.getElementById('adminLoginButton');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Hide previous messages
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            
+            // Disable button and show loading
+            loginButton.disabled = true;
+            loginButton.textContent = 'Authenticating...';
+            
+            try {
+                // Simulate API call (replace with actual admin authentication)
+                const response = await authenticateAdmin(email, password);
+                
+                if (response.success) {
+                    // Store admin session
+                    localStorage.setItem('adminToken', response.token);
+                    localStorage.setItem('adminEmail', email);
+                    localStorage.setItem('adminName', response.name);
+                    
+                    successMessage.textContent = 'Admin access granted! Redirecting...';
+                    successMessage.style.display = 'block';
+                    
+                    // Log admin access
+                    const adminLog = JSON.parse(localStorage.getItem('adminLog') || '[]');
+                    adminLog.push({
+                        action: 'admin_login',
+                        email: email,
+                        timestamp: new Date().toISOString(),
+                        ip: '127.0.0.1' // In real app, get actual IP
+                    });
+                    localStorage.setItem('adminLog', JSON.stringify(adminLog));
+                    
+                    // Redirect to admin panel
+                    setTimeout(() => {
+                        window.location.href = 'admin-panel.html';
+                    }, 1500);
+                } else {
+                    throw new Error(response.message || 'Admin authentication failed');
+                }
+            } catch (error) {
+                errorMessage.textContent = error.message;
+                errorMessage.style.display = 'block';
+                
+                // Log failed attempt
+                const adminLog = JSON.parse(localStorage.getItem('adminLog') || '[]');
+                adminLog.push({
+                    action: 'admin_login_failed',
+                    email: email,
+                    timestamp: new Date().toISOString(),
+                    error: error.message
+                });
+                localStorage.setItem('adminLog', JSON.stringify(adminLog));
+            } finally {
+                // Re-enable button
+                loginButton.disabled = false;
+                loginButton.textContent = 'Access Admin Panel';
+            }
+        });
+        
+        // Simulate admin authentication (replace with actual API)
+        async function authenticateAdmin(email, password) {
+            // Simulate network delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Check admin credentials (in real app, this would be server-side)
+            const adminCredentials = {
+                email: 'admin@microsaasempireblueprint.com',
+                password: 'admin123', // In real app, use proper hashing
+                name: 'Admin User'
+            };
+            
+            if (email === adminCredentials.email && password === adminCredentials.password) {
+                return {
+                    success: true,
+                    token: 'admin_token_' + Date.now(),
+                    name: adminCredentials.name
+                };
+            } else {
+                return {
+                    success: false,
+                    message: 'Invalid admin credentials'
+                };
+            }
+        }
+        
+        // Check if admin is already logged in
+        if (localStorage.getItem('adminToken')) {
+            window.location.href = 'admin-panel.html';
+        }
+    </script>
+</body>
+</html>
