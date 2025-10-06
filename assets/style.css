@@ -88,7 +88,7 @@ p {
     padding: 100px 0;
     text-align: center;
     color: #1f2937;
-    background: #1e3a8a url('/assets/images/hero-bg.jpg') no-repeat center center;
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6) url('/assets/images/hero-background.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     overflow: hidden;
